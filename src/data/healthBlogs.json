@@ -1,0 +1,68 @@
+[
+  {
+    "id": "b1",
+    "title": "Advances in Modern Cardiology: Early Detection and Precision Therapies",
+    "source": "American Heart Association (AHA)",
+    "sourceUrl": "https://www.heart.org",
+    "category": "Cardiology",
+    "readTime": "5 min read",
+    "date": "Oct 20, 2026",
+    "summary": "Exploring state-of-the-art telemetry and AI-driven imaging protocols that enhance diagnostic accuracy for complex arrhythmias and hypertensive heart disease.",
+    "bgGradient": "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)"
+  },
+  {
+    "id": "b2",
+    "title": "Pediatric Preventive Care: Immunization Milestones and Family Wellness",
+    "source": "World Health Organization (WHO)",
+    "sourceUrl": "https://www.who.int",
+    "category": "Pediatrics",
+    "readTime": "4 min read",
+    "date": "Oct 18, 2026",
+    "summary": "Key nutritional benchmarks and proactive early screening indicators recommended by pediatric wellness guidelines for developmental assessments.",
+    "bgGradient": "linear-gradient(135deg, #0f766e 0%, #115e59 100%)"
+  },
+  {
+    "id": "b3",
+    "title": "Neurology in Practice: Managing Chronic Migraines & Neuropathic Conditions",
+    "source": "The Lancet Neurology",
+    "sourceUrl": "https://www.thelancet.com/journals/laneur",
+    "category": "Neurology",
+    "readTime": "6 min read",
+    "date": "Oct 15, 2026",
+    "summary": "Clinical evaluations on novel pharmacological agents and holistic outpatient care strategies for patients dealing with refractory cluster headaches.",
+    "bgGradient": "linear-gradient(135deg, #4338ca 0%, #3730a3 100%)"
+  },
+  {
+    "id": "b4",
+    "title": "Endocrine Health & Glycemic Control: The Digital Diabetes Roadmap",
+    "source": "American Diabetes Association (ADA)",
+    "sourceUrl": "https://diabetes.org",
+    "category": "Endocrinology",
+    "readTime": "5 min read",
+    "date": "Oct 12, 2026",
+    "summary": "Continuous glucose monitoring (CGM) systems integrated with clinical doctor rosters for individualized patient therapy optimization.",
+    "bgGradient": "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)"
+  },
+  {
+    "id": "b5",
+    "title": "Orthopedic Surgery Recovery: Faster Rehabilitation Pathways",
+    "source": "Journal of Bone & Joint Surgery",
+    "sourceUrl": "https://jbjs.org",
+    "category": "Orthopedics",
+    "readTime": "4 min read",
+    "date": "Oct 10, 2026",
+    "summary": "Evidence-based post-operative mobilization and physical therapy routines that cut patient hospital recovery time by up to 35 percent.",
+    "bgGradient": "linear-gradient(135deg, #ea580c 0%, #c2410c 100%)"
+  },
+  {
+    "id": "b6",
+    "title": "Healthcare Administration Security: Protecting Electronic Health Records",
+    "source": "Health Affairs / HIPAA Journal",
+    "sourceUrl": "https://www.hipaajournal.com",
+    "category": "Health Informatics",
+    "readTime": "7 min read",
+    "date": "Oct 08, 2026",
+    "summary": "Role-based access control, cryptographic verification, and audit logging standards vital for modern hospital patient data governance.",
+    "bgGradient": "linear-gradient(135deg, #15803d 0%, #166534 100%)"
+  }
+]
