@@ -109,15 +109,20 @@ export default function HomePage() {
           <a href="#blogs" className="landing-nav-link">Health Insights</a>
         </nav>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           {user ? (
             <Link href="/dashboard" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: 13 }}>
               Go to Dashboard &rarr;
             </Link>
           ) : (
-            <Link href="/login" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: 13 }}>
-              Admin Sign In &rarr;
-            </Link>
+            <>
+              <Link href="/login" className="btn btn-outline" style={{ padding: '7px 16px', fontSize: 13 }}>
+                Sign In
+              </Link>
+              <Link href="/login?mode=register" className="btn btn-primary" style={{ padding: '7px 18px', fontSize: 13 }}>
+                Sign Up &rarr;
+              </Link>
+            </>
           )}
         </div>
       </header>
@@ -142,9 +147,14 @@ export default function HomePage() {
             <p className="carousel-desc">{slide.desc}</p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Link href={user ? '/dashboard' : '/login'} className="btn" style={{ background: '#ffffff', color: '#0369a1', fontWeight: 600, padding: '10px 20px', borderRadius: 8 }}>
-                {user ? 'Open Admin Portal' : 'Login as Administrator'}
+                {user ? 'Open Dashboard' : 'Sign In'}
               </Link>
-              <a href="#about" className="btn" style={{ background: 'rgba(255,255,255,0.15)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.3)', padding: '10px 18px', borderRadius: 8 }}>
+              {!user && (
+                <Link href="/login?mode=register" className="btn" style={{ background: 'rgba(255,255,255,0.2)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.4)', fontWeight: 600, padding: '10px 20px', borderRadius: 8 }}>
+                  Create Free Account
+                </Link>
+              )}
+              <a href="#about" className="btn" style={{ background: 'transparent', color: '#ffffff', border: '1px solid rgba(255,255,255,0.25)', padding: '10px 18px', borderRadius: 8 }}>
                 Explore Platform Overview
               </a>
             </div>

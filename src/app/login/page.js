@@ -1,18 +1,26 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import toast from 'react-hot-toast';
 import { IconMedicalCross, IconLock } from '@/components/Icons';
 
-export default function LoginPage() {
-  const [mode, setMode] = useState('login'); // 'login' | 'register'
+function LoginForm() {
+  const searchParams = useSearchParams();
+  const initialMode = searchParams.get('mode') === 'register' ? 'register' : 'login';
+  const [mode, setMode] = useState(initialMode); // 'login' | 'register'
   const [form, setForm] = useState({ email: '', password: '', name: '' });
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
   const { loginWithEmail, registerWithEmail, loginWithGoogle } = useAuth();
   const router = useRouter();
+
+  useEffect(() => {
+    const queryMode = searchParams.get('mode');
+    if (queryMode === 'register') setMode('register');
+    else if (queryMode === 'login') setMode('login');
+  }, [searchParams]);
 
   const handleChange = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
@@ -22,7 +30,7 @@ export default function LoginPage() {
     try {
       if (mode === 'login') {
         await loginWithEmail(form.email, form.password);
-        toast.success('Authenticated successfully');
+        toast.success('Signed in successfully');
       } else {
         await registerWithEmail(form.email, form.password, form.name);
         toast.success('Account created successfully');
@@ -61,8 +69,55 @@ export default function LoginPage() {
           </div>
           <h1 className="auth-title">DoctorTracker</h1>
           <p className="auth-subtitle">
-            {mode === 'login' ? 'Sign in to access the healthcare portal' : 'Create an administrative credential'}
+            {mode === 'login' ? 'Sign in to access your clinical portal' : 'Create a new user account'}
           </p>
+        </div>
+
+        {/* Tab Switcher for Sign In vs Sign Up */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          background: '#f1f5f9',
+          borderRadius: 8,
+          padding: 4,
+          marginBottom: 20
+        }}>
+          <button
+            type="button"
+            onClick={() => setMode('login')}
+            style={{
+              padding: '8px 12px',
+              fontSize: 13,
+              fontWeight: 600,
+              border: 'none',
+              borderRadius: 6,
+              cursor: 'pointer',
+              transition: 'var(--transition)',
+              background: mode === 'login' ? '#ffffff' : 'transparent',
+              color: mode === 'login' ? '#0f172a' : 'var(--text-muted)',
+              boxShadow: mode === 'login' ? '0 1px 3px rgba(0,0,0,0.08)' : 'none'
+            }}
+          >
+            Sign In
+          </button>
+          <button
+            type="button"
+            onClick={() => setMode('register')}
+            style={{
+              padding: '8px 12px',
+              fontSize: 13,
+              fontWeight: 600,
+              border: 'none',
+              borderRadius: 6,
+              cursor: 'pointer',
+              transition: 'var(--transition)',
+              background: mode === 'register' ? '#ffffff' : 'transparent',
+              color: mode === 'register' ? '#0f172a' : 'var(--text-muted)',
+              boxShadow: mode === 'register' ? '0 1px 3px rgba(0,0,0,0.08)' : 'none'
+            }}
+          >
+            Sign Up
+          </button>
         </div>
 
         {/* Google Sign In */}
@@ -152,5 +207,17 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-main)' }}>
+        <div className="spinner" />
+      </div>
+    }>
+      <LoginForm />
+    </Suspense>
   );
 }
