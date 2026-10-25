@@ -105,9 +105,8 @@ export default function HomePage() {
 
         <nav className="landing-nav-links">
           <a href="#about" className="landing-nav-link">About System</a>
-          <a href="#features" className="landing-nav-link">Features</a>
+          <a href="#features" className="landing-nav-link">Core Features</a>
           <a href="#blogs" className="landing-nav-link">Health Insights</a>
-          <a href="#credentials" className="landing-nav-link">Admin Credentials</a>
         </nav>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -267,34 +266,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Admin Credentials Banner ───────────────────────────────────────── */}
-      <section id="credentials" style={{ background: '#ffffff', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '48px 32px' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24 }}>
+      {/* ─── Enterprise Clinical Portal Banner ─────────────────────────────── */}
+      <section style={{ background: '#ffffff', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '52px 32px' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24 }}>
           <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '3px 10px', background: '#fef2f2', color: '#b91c1c', borderRadius: 20, fontSize: 11, fontWeight: 600, marginBottom: 8 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '3px 10px', background: '#f0fdf4', color: '#166534', borderRadius: 20, fontSize: 11, fontWeight: 600, marginBottom: 8 }}>
               <IconShield size={13} />
-              ADMINISTRATIVE ACCESS
+              HEALTHCARE ADMINISTRATION
             </div>
-            <h3 style={{ fontSize: 20, fontWeight: 700, color: '#0f172a', marginBottom: 6 }}>
-              Default Chief Administrator Credentials
+            <h3 style={{ fontSize: 22, fontWeight: 700, color: '#0f172a', marginBottom: 6 }}>
+              Hospital & Clinical Administration Portal
             </h3>
-            <p style={{ fontSize: 13.5, color: 'var(--text-secondary)', maxWidth: 600 }}>
-              Use these pre-configured credentials to evaluate the administrative dashboard, manage doctors, review patient records, or interact with MedBot.
+            <p style={{ fontSize: 14, color: 'var(--text-secondary)', maxWidth: 620, lineHeight: 1.5 }}>
+              Authorized healthcare facility directors, clinical department leads, and administrative coordinators can securely sign in to access physician directories, patient rosters, and analytical dashboards.
             </p>
           </div>
 
-          <div style={{ background: '#f8fafc', border: '1px solid var(--border)', borderRadius: 10, padding: '16px 20px', minWidth: 280 }}>
-            <div style={{ fontSize: 11, color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>
-              Login Credentials
-            </div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: '#0f172a', marginBottom: 4 }}>
-              Email: <span style={{ fontFamily: 'monospace', color: '#0284c7' }}>imtsky24@gmail.com</span>
-            </div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: '#0f172a', marginBottom: 12 }}>
-              Password: <span style={{ fontFamily: 'monospace', color: '#0284c7' }}>adminim</span>
-            </div>
-            <Link href="/login" className="btn btn-primary w-full" style={{ padding: '7px 14px', fontSize: 12.5, justifyContent: 'center' }}>
-              Sign In to Portal &rarr;
+          <div>
+            <Link href={user ? '/dashboard' : '/login'} className="btn btn-primary btn-lg" style={{ padding: '12px 24px', fontSize: 14 }}>
+              {user ? 'Open Dashboard \u2192' : 'Access Clinical Portal \u2192'}
             </Link>
           </div>
         </div>
@@ -395,11 +385,11 @@ export default function HomePage() {
           </div>
 
           <div className="footer-col">
-            <h4>Administration</h4>
+            <h4>Security & Governance</h4>
             <ul>
-              <li><span style={{ color: '#ffffff', fontWeight: 600 }}>Chief Admin:</span> imtsky24@gmail.com</li>
-              <li><span style={{ color: '#ffffff', fontWeight: 600 }}>Access Level:</span> Administrator Role</li>
-              <li><span style={{ color: '#ffffff', fontWeight: 600 }}>Engine:</span> Express.js & MongoDB Atlas</li>
+              <li><span style={{ color: '#ffffff', fontWeight: 600 }}>Access Control:</span> Role-Based JWT</li>
+              <li><span style={{ color: '#ffffff', fontWeight: 600 }}>Database:</span> MongoDB Atlas Distributed</li>
+              <li><span style={{ color: '#ffffff', fontWeight: 600 }}>Data Encryption:</span> TLS / HTTPS Enforced</li>
               <li><span style={{ color: '#ffffff', fontWeight: 600 }}>Assistant:</span> Google Gemini 1.5 Flash</li>
             </ul>
           </div>

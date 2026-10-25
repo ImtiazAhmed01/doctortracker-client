@@ -65,37 +65,6 @@ export default function LoginPage() {
           </p>
         </div>
 
-        {/* Default Admin Quick-Fill Banner */}
-        <div style={{
-          background: '#f0f9ff',
-          border: '1px solid #bae6fd',
-          borderRadius: 8,
-          padding: '10px 14px',
-          marginBottom: 16,
-          fontSize: 12,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: 10
-        }}>
-          <div>
-            <div style={{ fontWeight: 600, color: '#0369a1' }}>Demo Admin Credential</div>
-            <div style={{ color: 'var(--text-secondary)', fontSize: 11.5 }}>imtsky24@gmail.com &bull; adminim</div>
-          </div>
-          <button
-            type="button"
-            className="btn btn-outline"
-            style={{ fontSize: 11, padding: '4px 8px', whiteSpace: 'nowrap' }}
-            onClick={() => {
-              setMode('login');
-              setForm({ email: 'imtsky24@gmail.com', password: 'adminim', name: '' });
-              toast.success('Admin credentials populated');
-            }}
-          >
-            Quick Fill
-          </button>
-        </div>
-
         {/* Google Sign In */}
         <button className="google-btn" onClick={handleGoogle} disabled={googleLoading}>
           {googleLoading ? (
