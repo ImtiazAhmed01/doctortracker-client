@@ -7,9 +7,9 @@ A modern, responsive, clinical healthcare administrative dashboard built with **
 ## 🔗 Submission Details
 
 - **Frontend GitHub Repository**: `https://github.com/ImtiazAhmed01/doctortracker-client`
-- **Backend GitHub Repository**: `https://github.com/ImtiazAhmed01/doctortracker-server`
-- **Live Frontend Website**: `[YOUR_LIVE_FRONTEND_URL_HERE]` (e.g. `https://doctortracker-client.vercel.app`)
-- **Connected Backend API**: `https://doctortracker-server.onrender.com`
+- **Backend GitHub Repository**: `https://github.com/ImtiazAhmed01/doctortracker-server-side`
+- **Live Frontend Website**: `[YOUR_LIVE_FRONTEND_URL_HERE]`
+- **Connected Backend API**: `https://doctortracker-server-side.onrender.com`
 
 ---
 
